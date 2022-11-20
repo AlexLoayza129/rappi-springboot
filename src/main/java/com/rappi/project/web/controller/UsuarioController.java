@@ -5,13 +5,14 @@ package com.rappi.project.web.controller;
 
 import com.rappi.project.entity.Usuario;
 import com.rappi.project.service.UsuarioService;
-import com.rappi.project.service.UsuarioServiceImpl;
 import java.util.List;
 // Importing required classes
-import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+//Validate origin
+// @CrossOrigin(origins = {"http://localhost:8082"})
 // Annotation
 @RestController
 // Class
@@ -20,16 +21,14 @@ public class UsuarioController {
 	@Autowired private UsuarioService usuarioService;
 
 	// Save operation
-	@PostMapping("/usuarios")
-
-	public Usuario saveUsuario(
-		@Valid @RequestBody Usuario usuario)
+	@PostMapping("/api/usuarios")
+	public Usuario saveUsuario(@RequestBody Usuario usuario)
 	{
 		return usuarioService.saveUsuario(usuario);
 	}
 
 	// Read operation
-	@GetMapping("/usuarios")
+	@GetMapping("/api/usuarios")
 
 	public List<Usuario> fetchUsuarioList()
 	{
@@ -37,7 +36,7 @@ public class UsuarioController {
 	}
 	
 	// Read operation
-    @GetMapping("/usuarios/{id}")
+    @GetMapping("/api/usuarios/{id}")
 
     public Usuario getUsuario(@PathVariable("id") Long id)
     {
@@ -45,7 +44,7 @@ public class UsuarioController {
     }
 
 	// Update operation
-	@PutMapping("/usuarios/{id}")
+	@PutMapping("/api/usuarios/{id}")
 
 	public Usuario
 	updateUsuario(@RequestBody Usuario usuario,
@@ -56,7 +55,7 @@ public class UsuarioController {
 	}
 
 	// Delete operation
-	@DeleteMapping("/usuarios/{id}")
+	@DeleteMapping("/api/usuarios/{id}")
 
 	public String deleteUsuarioById(@PathVariable("id")
 									Long id)

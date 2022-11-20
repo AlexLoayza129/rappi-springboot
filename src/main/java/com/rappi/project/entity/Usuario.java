@@ -10,28 +10,27 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+// import javax.persistence.GeneratedValue;
+// import javax.persistence.GenerationType;
+// import javax.persistence.Id;
+// import lombok.AllArgsConstructor;
+// import lombok.Builder;
+// import lombok.Data;
+// import lombok.NoArgsConstructor;
  
 @Entity
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
 @Table(name = "Usuario")
  
 // Class
 public class Usuario {
  
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
+	@Column(name = "rol_ID")
+	private int rolId;
+
     @Column(name="nombres")
     private String nombres;
     
@@ -50,6 +49,14 @@ public class Usuario {
     @Column(name="direccion")
     private String direccion;
     
+	public int getRolID(){
+		return rolId;
+	}
+
+	public void setRolID(int rolId){
+		this.rolId = rolId;
+	}
+
 	public String getNombres() {
 		return nombres;
 	}
@@ -95,6 +102,6 @@ public class Usuario {
     
     @Override
 	public String toString(){
-		return "Usuario [id=" + id + ", name=" + nombres + ", apellidos=" + ", correo=" + correo + ", contrasena=" + contrasena + ", telefono=" + telefono + ", direccion=" + direccion + "]";
+		return "Usuario [id=" + id + ",rolId=" + rolId +", nombres=" + nombres + ", apellidos=" + apellidos + ", correo=" + correo + ", contrasena=" + contrasena + ", telefono=" + telefono + ", direccion=" + direccion + "]";
 	}
 }

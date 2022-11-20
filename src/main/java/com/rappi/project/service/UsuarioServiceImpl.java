@@ -26,7 +26,7 @@ public class UsuarioServiceImpl implements UsuarioService {
 	{
 		return usuarioRepository.save(usuario);
 	}
-
+	
 	// Read operation
 	@Override public List<Usuario> fetchUsuarioList()
 	{

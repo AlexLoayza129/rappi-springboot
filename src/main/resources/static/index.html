@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -124,8 +124,8 @@
 		<tbody id="usuarios">
 			
 		</tbody>
-	</div>
-
+	</table>
+    <p th:text="#{msgs.headers.price}">Price</p>
     </div>
     <script src="main.js"></script>
 </body>

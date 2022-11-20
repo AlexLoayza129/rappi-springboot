@@ -8,7 +8,7 @@ import com.rappi.project.entity.Usuario;
 import java.util.List;
  
 // Class
-public interface UsuarioService {
+public interface UsuarioService{
  
     // Save operation
 	Usuario saveUsuario(Usuario usuario);

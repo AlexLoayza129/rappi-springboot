@@ -66,25 +66,27 @@ const start = () => {
 start();*/
 
 async function awaitUsers(){
- let usuarios = await fetch('http://localhost:8080usuarios/')
-  	.then((response) => response.json())
-  		.then((data) => console.log(data));
+    let usuarios;
+    await fetch('http://localhost:8082/api/usuarios/')
+  	    .then((response) => response.json())
+  		    .then((data) => usuarios = data);
 
 	let tabla = document.getElementById('usuarios');
 	
 	usuarios.forEach(element => {
-		
-		let child = `<tr>
-			<td>${element.nombres}<td>
-			<td>${element.apellidos}<td>
-			<td>${element.correo}<td>
-			<td>${element.contraseña}<td>
-			<td>${element.telefono}<td>
-			<td>${element.direccion}<td>
-		<tr>`;
-		
-		tabla.append(child)
-	})
+
+        var row = document.createElement("tr");
+
+        for(let i = 0; i <= arrayOfUsers.length; i++){
+            let column = document.createElement("td");
+
+            column.text = arrayOfUsers[i];
+
+            row.appendChild(column)
+        }
+
+		tabla.append(row)
+	});
 	
 	
 
