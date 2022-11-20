@@ -6,13 +6,14 @@ package com.rappi.project.web.controller;
 import com.rappi.project.entity.Usuario;
 import com.rappi.project.service.UsuarioService;
 import java.util.List;
-// Importing required classes
 
+// Importing required classes
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 //Validate origin
-// @CrossOrigin(origins = {"http://localhost:8082"})
+@CrossOrigin(origins = {"http://localhost:8080"})
+
 // Annotation
 @RestController
 // Class
@@ -64,4 +65,5 @@ public class UsuarioController {
 			id);
 		return "Deleted Successfully";
 	}
+
 }

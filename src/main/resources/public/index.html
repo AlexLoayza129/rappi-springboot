@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rappi</title>
-    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
     <header>
@@ -107,7 +106,7 @@
             <hr size="1px" color="#E0E0E0">
         </ul>
     </nav>
-    <div class="cuerpo">
+    <div class="cuerpo" style="background-image: url('./assets/fondo.webp');">
         <div class="cuerpo__imagen">
             <img id="imagen" src="" class="comida">
         </div>
@@ -117,16 +116,27 @@
         <br>
         <span class="cuerpo__subtitulo">Para tus primeros pedidos en Restaurantes.</span>
         <div class="cuerpo__boton">
-            <button onclick="location.href='#'">¡Pide ahora!</button>
+            <button id="orderNow">¡Pide ahora!</button>
         </div>
 
-	<table>
+	<table border="1">
+        <thead>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Correo</th>
+            <th>Contraseña</th>
+            <th>Teléfono</th>
+            <th>Dirección</th>
+            <th>Tipo de usuario</th>
+        </thead>
 		<tbody id="usuarios">
 			
 		</tbody>
 	</table>
-    <p th:text="#{msgs.headers.price}">Price</p>
     </div>
-    <script src="main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+        crossorigin="anonymous">
+    </script>
 </body>
 </html>

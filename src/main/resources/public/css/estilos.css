@@ -123,7 +123,6 @@ header{
 .cuerpo{
     padding-left: 50px;
     height: 600px;
-    background-image: url("assets/fondo.webp");
     background-repeat: no-repeat;
     background-position: right bottom;
 }

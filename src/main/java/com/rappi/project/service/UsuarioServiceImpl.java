@@ -8,6 +8,7 @@ import com.rappi.project.entity.Usuario;
 import com.rappi.project.repository.UsuarioRepository;
 // Importing required classes
 import java.util.List;
+import org.springframework.ui.Model;
 import java.util.Objects;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
