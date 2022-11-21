@@ -22,7 +22,7 @@ import javax.persistence.Table;
 @Table(name = "Usuario")
  
 // Class
-public class Usuario {
+public class User {
  
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

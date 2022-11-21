@@ -3,8 +3,8 @@
 // Importing packages modules
 package com.rappi.project.web.controller;
 
-import com.rappi.project.entity.Usuario;
-import com.rappi.project.service.UsuarioService;
+import com.rappi.project.entity.User;
+import com.rappi.project.service.UserService;
 import java.util.List;
 
 // Importing required classes
@@ -19,11 +19,11 @@ import org.springframework.web.bind.annotation.*;
 // Class
 public class UsuarioController {
 
-	@Autowired private UsuarioService usuarioService;
+	@Autowired private UserService usuarioService;
 
 	// Save operation
 	@PostMapping("/api/usuarios")
-	public Usuario saveUsuario(@RequestBody Usuario usuario)
+	public User saveUsuario(@RequestBody User usuario)
 	{
 		return usuarioService.saveUsuario(usuario);
 	}
@@ -31,7 +31,7 @@ public class UsuarioController {
 	// Read operation
 	@GetMapping("/api/usuarios")
 
-	public List<Usuario> fetchUsuarioList()
+	public List<User> fetchUsuarioList()
 	{
 		return usuarioService.fetchUsuarioList();
 	}
@@ -39,7 +39,7 @@ public class UsuarioController {
 	// Read operation
     @GetMapping("/api/usuarios/{id}")
 
-    public Usuario getUsuario(@PathVariable("id") Long id)
+    public User getUsuario(@PathVariable("id") Long id)
     {
         return usuarioService.getUsuario(id);
     }
@@ -47,8 +47,8 @@ public class UsuarioController {
 	// Update operation
 	@PutMapping("/api/usuarios/{id}")
 
-	public Usuario
-	updateUsuario(@RequestBody Usuario usuario,
+	public User
+	updateUsuario(@RequestBody User usuario,
 					@PathVariable("id") Long id)
 	{
 		return usuarioService.updateUsuario(

@@ -4,11 +4,11 @@
 // Importing required packages
 package com.rappi.project.service;
 
-import com.rappi.project.entity.Usuario;
-import com.rappi.project.repository.UsuarioRepository;
+import com.rappi.project.entity.User;
+import com.rappi.project.repository.UserRepository;
+
 // Importing required classes
 import java.util.List;
-import org.springframework.ui.Model;
 import java.util.Objects;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,38 +16,38 @@ import org.springframework.stereotype.Service;
 // Annotation
 @Service
 // Class implementing DepartmentService class
-public class UsuarioServiceImpl implements UsuarioService {
+public class UserServiceImpl implements UserService {
 	
 	@Autowired
-	private UsuarioRepository usuarioRepository;
+	private UserRepository userRepository;
 
 	// Save operation
 	@Override
-	public Usuario saveUsuario(Usuario usuario)
+	public User saveUsuario(User usuario)
 	{
-		return usuarioRepository.save(usuario);
+		return userRepository.save(usuario);
 	}
 	
 	// Read operation
-	@Override public List<Usuario> fetchUsuarioList()
+	@Override public List<User> fetchUsuarioList()
 	{
-		return (List<Usuario>)
-				usuarioRepository.findAll();
+		return (List<User>)
+		userRepository.findAll();
 	}
 	
 	// Read operation
-    @Override public Usuario getUsuario(Long id)
+    @Override public User getUsuario(Long id)
     {
-        return usuarioRepository.findById(id).get();
+        return userRepository.findById(id).get();
     }
 
 	// Update operation
 	@Override
-	public Usuario
-	updateUsuario(Usuario usuario,Long id)
+	public User
+	updateUsuario(User usuario,Long id)
 	{
 
-		Usuario Usuario = usuarioRepository.findById(id).get();
+		User Usuario = userRepository.findById(id).get();
 
 		if (Objects.nonNull(usuario.getNombres())
 			&& !"".equalsIgnoreCase(
@@ -63,21 +63,13 @@ public class UsuarioServiceImpl implements UsuarioService {
 			Usuario.setDireccion(
 					usuario.getDireccion());
 		}
-
-		// if (Objects.nonNull(usuario.getDepartmentCode())
-		//	&& !"".equalsIgnoreCase(
-		//		department.getDepartmentCode())) {
-		//	depDB.setDepartmentCode(
-		//		department.getDepartmentCode());
-		//}
-
-		return usuarioRepository.save(Usuario);
+		return userRepository.save(Usuario);
 	}
 
 	// Delete operation
 	@Override
 	public void deleteUsuarioById(Long id)
 	{
-		usuarioRepository.deleteById(id);
+		userRepository.deleteById(id);
 	}
 }

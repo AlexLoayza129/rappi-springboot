@@ -3,25 +3,25 @@
  
 // Importing packages
 package com.rappi.project.service;
-import com.rappi.project.entity.Usuario;
+import com.rappi.project.entity.User;
 // Importing required classes
 import java.util.List;
  
 // Class
-public interface UsuarioService{
+public interface UserService{
  
     // Save operation
-	Usuario saveUsuario(Usuario usuario);
+	User saveUsuario(User usuario);
  
     // Read operation
-    List<Usuario> fetchUsuarioList();
+    List<User> fetchUsuarioList();
  
     // Update operation
-    Usuario updateUsuario(Usuario usuario,
+    User updateUsuario(User usuario,
                                 Long id);
  
     // Delete operation
     void deleteUsuarioById(Long id);
 
-    Usuario getUsuario(Long id);
+    User getUsuario(Long id);
 }
